@@ -33,7 +33,7 @@ export class PostController {
     }
 
     @Get("/user")
-    async findUserPosts(@Req() req: IRequest): Promise<UPost[]> {
+    async getUserPosts(@Req() req: IRequest): Promise<UPost[]> {
         return this.postService.getUserPosts(req.user.userId)
     }
 
@@ -50,7 +50,7 @@ export class PostController {
     }
 
     @Get("/:id")
-    async findPostById(@Param("id") id: string): Promise<UPost> {
+    async getPostById(@Param("id") id: string): Promise<UPost> {
         return await this.postService.getPostById(id)
     }
 
