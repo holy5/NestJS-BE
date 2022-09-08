@@ -53,7 +53,6 @@ export class PostService {
             postOwnerId: { $eq: userId },
         })
 
-        // convert objectId to String
         if (post) {
             await this.commentService.deleteAllPostComments(postId)
             return await post.remove()
